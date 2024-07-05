@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTX+rC4Z3a3n8ns0zEN4MyQ4eF2r3nY5a7Q9P6HDkF0mTzE+F+B1jMRlYxmcBpPj7zk5d/muQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Expense Tracker for Sustainable Development Goals</h1>
+            <p>An essential tool for early-stage startups to manage and track their expenses efficiently.</p>
+        </header>
+
+        <section class="section" id="purpose">
+            <h2>Purpose</h2>
+            <p>This Expense Tracker helps startups allocate their funding across various categories, track expenses, and ensure efficient use of resources. It aligns with the sustainable development goals by promoting financial responsibility and transparency.</p>
+        </section>
+
+        <section class="section" id="need">
+            <h2>Why is this needed?</h2>
+            <p>Effective budget management is crucial for the success of any startup. This tool provides a simple and intuitive way to track expenses, making it easier to stay within budget and allocate resources where they are needed most.</p>
+        </section>
+
+        <section class="section" id="use-case">
+            <h2>Use Case</h2>
+            <p>Imagine you have secured funding for your startup. This tool will help you allocate your total budget to different categories like salaries, business development, and team building. You can then track your expenses in each category and see a detailed report of your spending.</p>
+        </section>
+       
+        <div class="section">
+            <h2>Total Funding</h2>
+            <input type="number" id="total-budget" placeholder="Enter your total funding amount">
+            <button onclick="setTotalBudget()">Set Total Budget</button>
+        </div>
+
+        <div class="section" id="budget-allocation-section" style="display: none;">
+            <h2>Budget Allocation</h2>
+            <div id="budget-inputs"></div>
+            <button onclick="setBudgets()">Set Budgets</button>
+        </div>
+
+        <div class="section" id="expense-tracking-section" style="display: none;">
+            <h2>Expense Tracking</h2>
+            <select id="expense-category">
+                <option value="">Select Category</option>
+            </select>
+            <input type="number" id="expense-amount" placeholder="Enter expense amount">
+            <button onclick="addExpense()">Add Expense</button>
+            <h2>Instructions</h2>
+            <p>You can always go back to add more expenses and update values for different categories. Just follow the steps above to keep your budget updated.</p>
+        </div>
+
+
+        <div class="section" id="report-section" style="display: none;">
+            <h2>Expense Report</h2>
+            <div id="report"></div>
+            <button onclick="showChart()">Show Chart</button>
+        </div>
+
+        <div class="section" id="chart-section" style="display: none;">
+            <h2>Expense Chart</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Budget</th>
+                        <th>Spent</th>
+                        <th>Remaining</th>
+                    </tr>
+                </thead>
+                <tbody id="chart-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
